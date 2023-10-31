@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Management</title>
+  </head>
+
+  <style>
+    #locationBlock {
+      flex-direction: row nowrap;
+      display: flex;
+      gap: 150px;
+      box-shadow: 1px 4px 30px 1px;
+      margin: 40px;
+      justify-content: center;
+    }
+    #parentElement {
+      background-color: white;
+    }
+    #pumpButton {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: blue;
+      border-radius: 15px 15px 15px 15px;
+      margin-left: 20px;
+      color: whitesmoke;
+      font-weight: 600;
+    }
+    #Chennai {
+      color: black;
+      margin: 2px;
+    }
+    #currentElement {
+        
+        flex-direction: row nowrap;
+      display: flex;
+      gap: 150px;
+      box-shadow: 1px 4px 30px 1px;
+      margin: 40px;
+      justify-content: center;
+    }
+    #Header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: row nowrap;
+      font-weight: 900;
+      font-size: xx-large;
+      color: gray;
+    }
+  </style>
+
+  <body onload="hideElement()">
+    <div id="Header">Water Management</div>
+    <div id="parentElement">
+
+      <div id="locationBlock">
+
+        <div id="Chennai">
+          <h3 id="chennaiCity">Chennai</h3>
+          <p id="chennaiSensor">Sensor Data: 3</p>
+          <p id="chennaiWaterLevel">Current Water Level(ft): 74.23</p>
+          <button id="pumpButton" onclick="startPumping('Chennai')">
+            Start Pump
+          </button>
+        </div>
+
+        <div id="">
+          <h3 id="MaduraiCity">Madurai</h3>
+          <p id="maduraiSensor">Sensor Data: 23.30</p>
+          <p id="maduraiWaterLevel">Current Water Level(ft): 24.44</p>
+          <button id="pumpButton" onclick="startPumping('Madurai')">
+            Start Pump
+          </button>
+        </div>
+
+        <div id="">
+          <h3 id="RamanathapuramCity">Ramanathapuram</h3>
+          <p id="ramnadSensor">Sensor Data: 16.19</p>
+          <p id="ramnadWaterLevel">Current Water Level(ft): 2.05</p>
+          <button id="pumpButton" onclick="startPumping('Ramanathapuram')">
+            Start Pump
+          </button>
+        </div>
+
+        <div id="">
+          <h3 id="TirunelveliCity">Tirunelveli</h3>
+          <p id="tirunelveliSensor">Sensor Data: 12.33</p>
+          <p id="tirunelveliWaterLevel">Current Water Level(ft): 12.03</p>
+          <button id="pumpButton" onclick="startPumping('Tirunelveli')">
+            Start Pump
+          </button>
+        </div>
+      </div>
+
+      <div id="currentElement">
+        <p id="City"></p>
+        <p id="Sensor"></p>
+        <p id="WaterLevel"></p>
+
+      </div>
+    </div>
+
+    <script>
+      function startPumping(city) {
+        var _element = document.getElementById("currentElement");
+
+        _element.style.display = "block";
+        _element.style.display = "flex";
+
+
+        if (city === "Chennai") {
+
+          var _currentCity = document.getElementById("chennaiCity").innerHTML;
+          var _currentSensor = document.getElementById("chennaiSensor").innerHTML;
+          var _currentWaterLevel = document.getElementById("chennaiWaterLevel").innerHTML;
+
+          document.getElementById("City").innerHTML = _currentCity;
+          document.getElementById("Sensor").innerHTML = _currentSensor;
+          document.getElementById("WaterLevel").innerHTML = _currentWaterLevel;
+
+
+
+        } else if (city === "Madurai") {
+
+          var _currentCity = document.getElementById("MaduraiCity").innerHTML;
+          var _currentSensor = document.getElementById("maduraiSensor").innerHTML;
+          var _currentWaterLevel = document.getElementById("maduraiWaterLevel").innerHTML;
+
+          document.getElementById("City").innerHTML = _currentCity;
+          document.getElementById("Sensor").innerHTML = _currentSensor;
+          document.getElementById("WaterLevel").innerHTML = _currentWaterLevel;
+
+        } else if (city === "Tirunelveli") {
+
+          var _currentCity = document.getElementById("TirunelveliCity").innerHTML;
+          var _currentSensor = document.getElementById("tirunelveliSensor").innerHTML;
+          var _currentWaterLevel = document.getElementById("tirunelveliWaterLevel").innerHTML;
+
+          document.getElementById("City").innerHTML = _currentCity;
+          document.getElementById("Sensor").innerHTML = _currentSensor;
+          document.getElementById("WaterLevel").innerHTML = _currentWaterLevel;
+
+        } else if (city === "Ramanathapuram") {
+
+          var _currentCity = document.getElementById("RamanathapuramCity").innerHTML;
+          var _currentSensor = document.getElementById("ramnadSensor").innerHTML;
+          var _currentWaterLevel = document.getElementById("ramnadWaterLevel").innerHTML;
+
+          document.getElementById("City").innerHTML = _currentCity;
+          document.getElementById("Sensor").innerHTML = _currentSensor;
+          document.getElementById("WaterLevel").innerHTML = _currentWaterLevel;
+        }
+      }
+
+      function hideElement(){
+
+      }
+    </script>
+  </body>
+</html>
